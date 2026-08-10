@@ -807,6 +807,169 @@
       padding:5px 12px; border-radius:100px; cursor:pointer; transition:all .18s ease; color:var(--text-soft); border:none; background:none;
     }
     .lang-btn.active{background:var(--green); color:#052312;}
+
+    .mobile-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--text);
+      padding: 8px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-left: 8px;
+      transition: background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .mobile-toggle:hover {
+      border-color: var(--green-bright);
+      color: var(--green-bright);
+    }
+
+    .mobile-toggle svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+    }
+
+    @media(min-width:880px) {
+      .mobile-toggle {
+        display: none;
+      }
+    }
+
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(13, 22, 38, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+      padding: 20px 24px 24px;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 100;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      animation: fadeInDown 0.2s ease-out;
+    }
+
+    .mobile-menu.active {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line-soft);
+      transition: color 0.18s ease;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--green-bright);
+    }
+
+    .mobile-menu .btn-primary {
+      justify-content: center;
+      margin-top: 8px;
+      width: 100%;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .wrap {
+        padding: 0 18px;
+      }
+      section {
+        padding: 56px 0;
+      }
+      nav.wrap {
+        height: 68px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 48px 0 40px;
+      }
+      .hero-grid {
+        text-align: center;
+        gap: 36px;
+      }
+      h1.hero-title {
+        max-width: none;
+        font-size: clamp(2rem, 7.5vw, 2.8rem);
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-sub {
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .eyebrow, .hero-ctas, .hero-note {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-ctas .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media(min-width:550px) and (max-width:859px) {
+      .feat-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .cta-final {
+        padding: 40px 20px;
+        margin: 0 12px;
+        border-radius: 20px;
+      }
+      .cta-final h2 {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .foot-grid {
+        flex-direction: column;
+        gap: 28px;
+      }
+      .foot-cols {
+        gap: 24px 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        width: 100%;
+      }
+      .foot-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+      }
+    }
   </style>
 </head>
 
@@ -831,8 +994,23 @@
           <button class="lang-btn" onclick="setLang('en')">🇺🇸 EN</button>
         </div>
         <a href="#unduh" class="btn btn-primary nav-cta" id="ctaNavBtn">Unduh Gratis</a>
+        <button class="mobile-toggle" id="mobileToggleBtn" aria-label="Menu Navigasi" onclick="toggleMobileMenu()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
     </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#fitur" onclick="closeMobileMenu()">Fitur</a>
+      <a href="#kolaborasi" onclick="closeMobileMenu()">Kolaborasi</a>
+      <a href="#cara-kerja" onclick="closeMobileMenu()">Cara Kerja</a>
+      <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+      <a href="privacy-policy.html" onclick="closeMobileMenu()">Kebijakan Privasi</a>
+      <a href="#unduh" class="btn btn-primary" id="mobileCtaBtn" onclick="closeMobileMenu()">Unduh Gratis</a>
+    </div>
   </header>
 
   <section class="hero">
@@ -1087,6 +1265,26 @@
   <script>
     let currentLang = getCurrentLanguage();
 
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if(menu) menu.classList.toggle('active');
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if(menu) menu.classList.remove('active');
+    }
+
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('mobileToggleBtn');
+      if (menu && menu.classList.contains('active')) {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+          menu.classList.remove('active');
+        }
+      }
+    });
+
     function setLang(lang) {
       currentLang = lang;
       setCurrentLanguage(lang);
@@ -1104,8 +1302,18 @@
         navLinks[3].innerText = dict.navFaq;
         navLinks[4].innerText = dict.navPrivacy;
       }
+      const mobLinks = document.querySelectorAll('.mobile-menu a:not(#mobileCtaBtn)');
+      if(mobLinks.length >= 5) {
+        mobLinks[0].innerText = dict.navFitur;
+        mobLinks[1].innerText = dict.navCollab;
+        mobLinks[2].innerText = dict.navHow;
+        mobLinks[3].innerText = dict.navFaq;
+        mobLinks[4].innerText = dict.navPrivacy;
+      }
       const ctaBtn = document.getElementById('ctaNavBtn');
       if(ctaBtn) ctaBtn.innerText = dict.navCta;
+      const mobCtaBtn = document.getElementById('mobileCtaBtn');
+      if(mobCtaBtn) mobCtaBtn.innerText = dict.navCta;
 
       const heroEb = document.querySelector('.hero .eyebrow');
       if(heroEb) heroEb.innerText = dict.heroEyebrow;
