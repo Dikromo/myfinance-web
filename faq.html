@@ -59,10 +59,10 @@
   
   .lang-toggle{
     display:inline-flex; align-items:center; background:var(--surface); border:1px solid var(--line);
-    border-radius:100px; padding:3px; gap:2px; font-size:0.78rem; font-weight:700;
+    border-radius:100px; padding:3px; gap:2px; font-size:0.78rem; font-weight:700; flex-shrink:0; white-space:nowrap;
   }
   .lang-btn{
-    padding:5px 12px; border-radius:100px; cursor:pointer; transition:all .18s ease; color:var(--text-soft); border:none; background:none;
+    padding:4px 10px; border-radius:100px; cursor:pointer; transition:all .18s ease; color:var(--text-soft); border:none; background:none; white-space:nowrap; font-size:0.78rem; line-height:1.2;
   }
   .lang-btn.active{background:var(--green); color:#052312;}
 
@@ -150,11 +150,16 @@
   .foot-bottom{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; font-size:0.78rem; color:var(--text-dim); font-family:'IBM Plex Mono',monospace;}
 
   @media (max-width: 600px) {
-    .wrap { padding: 0 18px; }
+    .wrap { padding: 0 16px; }
     main { padding: 32px 0 60px; }
-    nav.wrap { height: 68px; }
-    .nav-right { gap: 8px; }
-    .btn { padding: 8px 12px; font-size: 0.8rem; }
+    nav.wrap { height: 64px; padding: 0 12px; }
+    .brand { gap: 6px; }
+    .brand img { width: 28px; height: 28px; }
+    .brand .mark { font-size: 1.05rem; }
+    .lang-toggle { padding: 2px; }
+    .lang-btn { padding: 3px 7px; font-size: 0.72rem; }
+    .nav-right { gap: 6px; }
+    .btn { padding: 6px 10px; font-size: 0.78rem; }
     summary { padding: 16px 18px; font-size: 0.98rem; }
     .faq-body { padding: 12px 18px 18px; font-size: 0.88rem; }
   }
@@ -179,8 +184,8 @@
     </a>
     <div class="nav-right">
       <div class="lang-toggle">
-        <button class="lang-btn active" onclick="setLang('id')">🇮🇩 ID</button>
-        <button class="lang-btn" onclick="setLang('en')">🇺🇸 EN</button>
+        <button class="lang-btn active" onclick="setLang('id')">ID</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
       </div>
       <a href="index.html" class="btn btn-ghost" id="backBtn">← Beranda</a>
     </div>
