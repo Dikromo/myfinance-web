@@ -200,7 +200,8 @@
       <span id="copyText">© 2026 MyFinance. Semua hak dilindungi.</span>
       <div>
         <a href="privacy-policy.html" style="margin-right:16px;" id="privacyLink">Kebijakan Privasi</a>
-        <a href="index.html" id="homeLink">Kembali ke Beranda</a>
+        <a href="terms.html" style="margin-right:16px;" id="termsLink">Syarat & Ketentuan</a>
+        <a href="index.html" id="homeLink">Beranda</a>
       </div>
     </div>
   </div>
@@ -239,7 +240,8 @@
       document.getElementById('backBtn').innerText = '← Beranda';
       document.getElementById('copyText').innerText = '© 2026 MyFinance. Semua hak dilindungi.';
       document.getElementById('privacyLink').innerText = 'Kebijakan Privasi';
-      document.getElementById('homeLink').innerText = 'Kembali ke Beranda';
+      if(document.getElementById('termsLink')) document.getElementById('termsLink').innerText = 'Syarat & Ketentuan';
+      document.getElementById('homeLink').innerText = 'Beranda';
     } else {
       document.getElementById('pageTitle').innerText = 'Help Center & FAQ — MyFinance';
       document.getElementById('eyebrowText').innerText = 'Help Center & FAQ';
@@ -249,7 +251,8 @@
       document.getElementById('backBtn').innerText = '← Home';
       document.getElementById('copyText').innerText = '© 2026 MyFinance. All rights reserved.';
       document.getElementById('privacyLink').innerText = 'Privacy Policy';
-      document.getElementById('homeLink').innerText = 'Back to Home';
+      if(document.getElementById('termsLink')) document.getElementById('termsLink').innerText = 'Terms & Conditions';
+      document.getElementById('homeLink').innerText = 'Home';
     }
   }
 
@@ -270,7 +273,8 @@
 
   function renderFaqs() {
     const container = document.getElementById('faqContainer');
-    const query = document.getElementById('searchInput').value.toLowerCase().trim();
+    const searchInput = document.getElementById('searchInput');
+    const query = (searchInput && searchInput.value ? searchInput.value : '').toLowerCase().trim();
 
     const filtered = AppTranslations.faqs.filter(item => {
       const q = currentLang === 'id' ? item.qId : item.qEn;

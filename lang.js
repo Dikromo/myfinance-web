@@ -484,8 +484,132 @@ var AppTranslations = {
         }
       ]
     }
-  }
-};
+  },
+  terms: {
+      id: {
+        eyebrow: 'Aturan & Syarat Penggunaan',
+        title: 'Syarat & Ketentuan',
+        desc: 'Harap baca Syarat dan Ketentuan berikut sebelum menggunakan aplikasi MyFinance dan fitur asisten Fina AI.',
+        badge: 'Terakhir Diperbarui: 5 Agustus 2026',
+        subFoot: 'Ditenagai Gemini AI · Dibuat untuk yang mau lebih ngerti duitnya sendiri.',
+        cards: [
+          {
+            num: '01',
+            title: 'Lisensi Aplikasi & Ketentuan Layanan',
+            items: [
+              '<b>Penggunaan Pribadi & Usaha:</b> MyFinance memberikan Anda lisensi terbatas, non-eksklusif, dan tidak dapat dipindahtangankan untuk menginstal serta menggunakan aplikasi pada perangkat Android milik Anda sendiri.',
+              '<b>Lisensi PRO Sekali Beli:</b> Pembelian Kode Lisensi PRO bersifat Sekali Beli untuk Selamanya (Lifetime One-Time Purchase). Lisensi ini berlaku untuk 1 perangkat utama dan menjamin pengalaman aplikasi 100% bebas dari semua iklan.',
+              '<b>Kebijakan Pengembalian Dana:</b> Pembelian Lisensi PRO bersifat final. Pastikan Anda telah mencoba dan menguji versi gratis aplikasi sebelum mengaktifkan lisensi.'
+            ]
+          },
+          {
+            num: '02',
+            title: 'Penggunaan Fina AI & Google Gemini API',
+            items: [
+              '<b>Model AI Pihak Ketiga:</b> Fitur Fina AI memanfaatkan teknologi Google Gemini API untuk analisis catatan transaksi dan pemrosesan gambar nota/struk.',
+              '<b>Tanggung Jawab API Key:</b> Anda bertanggung jawab atas kerahasiaan Gemini API Key pribadi yang Anda masukkan. Jangan pernah membagikan API Key Anda kepada pihak lain.',
+              '<b>Penafian Akurasi AI:</b> Fina AI dirancang untuk membantu pengelompokan dan analisis keuangan secara otomatis. Hasil keluaran AI bersifat saran informatif dan pengguna disarankan untuk selalu memverifikasi ulang angka transaksi.'
+            ]
+          },
+          {
+            num: '03',
+            title: 'Penyimpanan Data & Sinkronisasi Google Sheets',
+            items: [
+              '<b>Kepemilikan Data 100%:</b> Seluruh data keuangan tersimpan secara lokal di SQLite ponsel Anda dan di Google Sheets pribadi Anda.',
+              '<b>Koneksi Langsung:</b> Fitur sinkronisasi bekerja via Google Sheets Web App milik Anda sendiri tanpa melalui server perantara dari kami.',
+              '<b>Tanggung Jawab Cadangan Data:</b> Anda bertanggung jawab menjaga akses akun Google dan keamanan perangkat Anda dari risiko kehilangan data lokal.'
+            ]
+          },
+          {
+            num: '04',
+            title: 'Ketentuan Layanan Iklan Google AdMob',
+            items: [
+              '<b>Penayangan Iklan:</b> Versi Gratis aplikasi didukung oleh iklan dari Google AdMob untuk menjaga operasional aplikasi tetap gratis.',
+              '<b>Kepatuhan Aturan Iklan:</b> Dilarang melakukan klik berulang buatan (click fraud) atau tindakan manipulasi iklan yang melanggar Kebijakan Pengembang Google AdMob.'
+            ]
+          },
+          {
+            num: '05',
+            title: 'Penafian Tanggung Jawab Keuangan (Disclaimer)',
+            items: [
+              '<b>Bukan Penasihat Keuangan Terdaftar:</b> MyFinance adalah perangkat lunak pencatat dan pembukuan mandiri, bukan lembaga keuangan atau penasihat investasi terdaftar.',
+              '<b>Keputusan Finansial:</b> Segala keputusan pengeluaran, tabungan, dan investasi sepenuhnya menjadi tanggung jawab pengguna masing-masing.'
+            ]
+          },
+          {
+            num: '06',
+            fullWidth: true,
+            title: 'Hak Cipta & Merek Dagang',
+            items: [
+              '<b>Hak Kekayaan Intelektual:</b> Seluruh kode sumber, desain UI/UX, dan nama MyFinance adalah milik penuh pengembang aplikasi.',
+              '<b>Merek Dagang Pihak Ketiga:</b> Google, Google Gemini API, Google Sheets, Google Drive, dan Google AdMob adalah merek dagang terdaftar milik Google LLC.'
+            ]
+          }
+        ]
+      },
+      en: {
+        eyebrow: 'Rules & Terms of Use',
+        title: 'Terms & Conditions',
+        desc: 'Please read the following Terms and Conditions before using the MyFinance application and Fina AI assistant feature.',
+        badge: 'Last Updated: August 5, 2026',
+        subFoot: 'Powered by Gemini AI · Built for those who want to master their finances.',
+        cards: [
+          {
+            num: '01',
+            title: 'Application License & Service Terms',
+            items: [
+              '<b>Personal & Business Use:</b> MyFinance grants you a limited, non-exclusive, non-transferable license to install and use the app on your personal Android device.',
+              '<b>Lifetime PRO License:</b> Purchasing a PRO License Code is a Lifetime One-Time Purchase valid for 1 primary device, guaranteeing a 100% ad-free experience.',
+              '<b>Refund Policy:</b> PRO License purchases are final. Please test the free version before activating a premium license.'
+            ]
+          },
+          {
+            num: '02',
+            title: 'Fina AI & Google Gemini API Terms',
+            items: [
+              '<b>Third-Party AI Models:</b> Fina AI utilizes Google Gemini API for natural text transaction parsing and receipt vision scanning.',
+              '<b>API Key Responsibility:</b> You are responsible for keeping your personal Gemini API Key confidential. Never share your key with third parties.',
+              '<b>AI Accuracy Disclaimer:</b> Fina AI is designed as a financial helper. AI suggestions are informative, and users are encouraged to verify exact transaction figures.'
+            ]
+          },
+          {
+            num: '03',
+            title: 'Data Storage & Google Sheets Sync',
+            items: [
+              '<b>100% Data Ownership:</b> All financial records are stored locally in your phone SQLite database and your personal Google Sheets.',
+              '<b>Direct Connection:</b> Cloud sync works directly with your own Google Sheets Web App URL with no middleman servers.',
+              '<b>Backup Responsibility:</b> You are responsible for maintaining access to your Google account and device security.'
+            ]
+          },
+          {
+            num: '04',
+            title: 'Google AdMob Ad Service Terms',
+            items: [
+              '<b>Ad Display:</b> The Free version of MyFinance is supported by Google AdMob ads to keep app maintenance free of charge.',
+              '<b>Ad Policy Compliance:</b> Automated clicks, click fraud, or any ad manipulation violating Google AdMob Developer Policies are strictly prohibited.'
+            ]
+          },
+          {
+            num: '05',
+            title: 'Financial Liability Disclaimer',
+            items: [
+              '<b>Not a Financial Advisor:</b> MyFinance is a personal bookkeeping tool, not a certified financial advisory or investment institution.',
+              '<b>Financial Decisions:</b> All budgeting, spending, and investment decisions remain entirely your personal responsibility.'
+            ]
+          },
+          {
+            num: '06',
+            fullWidth: true,
+            title: 'Copyright & Trademarks',
+            items: [
+              '<b>Intellectual Property:</b> All source code, UI/UX designs, and the MyFinance brand are full property of the app developer.',
+              '<b>Third-Party Trademarks:</b> Google, Google Gemini API, Google Sheets, Google Drive, and Google AdMob are registered trademarks of Google LLC.'
+            ]
+          }
+        ]
+      }
+    }
+  };
 
 // Global Language Helper Utilities
 function getCurrentLanguage() {
