@@ -160,7 +160,7 @@
   </div>
 </footer>
 
-<script src="lang.js"></script>
+<script src="lang.js?v=1.1"></script>
 <script>
   let currentLang = getCurrentLanguage();
 
@@ -173,12 +173,13 @@
   }
 
   function updatePageText() {
-    const data = AppTranslations.privacy[currentLang];
+    const privDict = (typeof AppTranslations !== 'undefined' && AppTranslations.privacy) ? AppTranslations.privacy : {};
+    const data = privDict[currentLang] || privDict['id'] || {};
     document.getElementById('pageTitle').innerText = (currentLang === 'id' ? 'Kebijakan Privasi — MyFinance' : 'Privacy Policy — MyFinance');
-    document.getElementById('eyebrowText').innerText = data.eyebrow;
-    document.getElementById('titleText').innerText = data.title;
-    document.getElementById('descText').innerText = data.desc;
-    document.getElementById('badgeText').innerText = data.badge;
+    if (data.eyebrow) document.getElementById('eyebrowText').innerText = data.eyebrow;
+    if (data.title) document.getElementById('titleText').innerText = data.title;
+    if (data.desc) document.getElementById('descText').innerText = data.desc;
+    if (data.badge) document.getElementById('badgeText').innerText = data.badge;
     document.getElementById('backBtn').innerText = (currentLang === 'id' ? '← Beranda' : '← Home');
     document.getElementById('copyText').innerText = (currentLang === 'id' ? '© 2026 MyFinance. Semua hak dilindungi.' : '© 2026 MyFinance. All rights reserved.');
     if(document.getElementById('termsLink')) document.getElementById('termsLink').innerText = (currentLang === 'id' ? 'Syarat & Ketentuan' : 'Terms & Conditions');
@@ -187,7 +188,8 @@
 
   function renderGrid() {
     const grid = document.getElementById('policyGrid');
-    const cards = AppTranslations.privacy[currentLang].cards;
+    const privDict = (typeof AppTranslations !== 'undefined' && AppTranslations.privacy) ? AppTranslations.privacy : {};
+    const cards = (privDict[currentLang] || privDict['id'] || {}).cards || [];
     grid.innerHTML = cards.map(p => {
       const fullClass = p.fullWidth ? 'full-width' : '';
       return `
