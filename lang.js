@@ -57,7 +57,7 @@ var AppTranslations = {
       faqQ2: '👥 Bisakah sinkron 2 HP dengan Pasangan?',
       faqA2: 'Bisa! Cukup hubungkan 1 URL Google Sheet yang sama di 2 HP untuk pencatatan keuangan bersama secara real-time.',
       faqQ3: '👑 Apakah Lisensi PRO bayar bulanan?',
-      faqA3: 'Tidak. Lisensi PRO menggunakan sistem Sekali Beli untuk Selamanya (Lifetime) dan 100% bebas dari semua iklan.',
+      faqA3: 'Lisensi PRO memberikan pengalaman 100% Bebas Iklan tanpa gangguan.',
       faqBtnAll: 'Lihat Pertanyaan Selengkapnya ➔',
       ctaTitle: 'Mulai catat hari ini, ngerti keuanganmu besok.',
       ctaSub: 'Gratis diunduh, langsung bisa dipakai offline. Aktifkan Fina AI dan sinkron kapan pun kamu siap.',
@@ -140,7 +140,7 @@ var AppTranslations = {
       faqQ2: '👥 Can 2 phones sync with a partner?',
       faqA2: 'Yes! Simply connect the same 1 Google Sheet URL on both phones for live joint financial tracking.',
       faqQ3: '👑 Does the PRO License charge monthly fees?',
-      faqA3: 'No. The PRO License is a Lifetime One-Time Purchase and 100% ad-free.',
+      faqA3: 'The PRO License provides a 100% Ad-Free experience without interruptions.',
       faqBtnAll: 'View All Questions ➔',
       ctaTitle: 'Start tracking today, master your money tomorrow.',
       ctaSub: 'Free to download, works 100% offline immediately. Activate Fina AI and sync whenever you are ready.',
@@ -498,7 +498,7 @@ var AppTranslations = {
             title: 'Lisensi Aplikasi & Ketentuan Layanan',
             items: [
               '<b>Penggunaan Pribadi & Usaha:</b> MyFinance memberikan Anda lisensi terbatas, non-eksklusif, dan tidak dapat dipindahtangankan untuk menginstal serta menggunakan aplikasi pada perangkat Android milik Anda sendiri.',
-              '<b>Lisensi PRO Sekali Beli:</b> Pembelian Kode Lisensi PRO bersifat Sekali Beli untuk Selamanya (Lifetime One-Time Purchase). Lisensi ini berlaku untuk 1 perangkat utama dan menjamin pengalaman aplikasi 100% bebas dari semua iklan.',
+              '<b>Pengalaman 100% Bebas Iklan:</b> Mengaktifkan Lisensi PRO memberikan pengalaman aplikasi 100% bebas dari semua iklan tanpa gangguan.',
               '<b>Kebijakan Pengembalian Dana:</b> Pembelian Lisensi PRO bersifat final. Pastikan Anda telah mencoba dan menguji versi gratis aplikasi sebelum mengaktifkan lisensi.'
             ]
           },
@@ -559,7 +559,7 @@ var AppTranslations = {
             title: 'Application License & Service Terms',
             items: [
               '<b>Personal & Business Use:</b> MyFinance grants you a limited, non-exclusive, non-transferable license to install and use the app on your personal Android device.',
-              '<b>Lifetime PRO License:</b> Purchasing a PRO License Code is a Lifetime One-Time Purchase valid for 1 primary device, guaranteeing a 100% ad-free experience.',
+              '<b>100% Ad-Free Experience:</b> Activating a PRO License guarantees a 100% ad-free app experience without interruptions.',
               '<b>Refund Policy:</b> PRO License purchases are final. Please test the free version before activating a premium license.'
             ]
           },
