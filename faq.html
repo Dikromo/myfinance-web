@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Pusat Bantuan & FAQ — MyFinance</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+  :root{
+    --bg:#0A1220;
+    --bg-2:#0D1626;
+    --surface:#131F35;
+    --surface-2:#182A47;
+    --line:#233350;
+    --line-soft:#1B2A45;
+    --text:#F1F5F9;
+    --text-soft:rgba(226,232,240,0.62);
+    --text-dim:rgba(226,232,240,0.42);
+    --green:#05B35E;
+    --green-bright:#12D67C;
+    --green-tint:rgba(5,179,94,0.14);
+    --red:#EF4444;
+    --gold:#F0B429;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Plus Jakarta Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    display:flex; flex-direction:column; min-height:100vh;
+  }
+  .wrap{max-width:1140px; margin:0 auto; padding:0 28px; width:100%;}
+  a{color:inherit; text-decoration:none;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .disp{font-family:'Space Grotesk', sans-serif;}
+  ::selection{background:var(--green); color:#fff;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,18,32,0.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:78px;
+  }
+  .brand{display:flex; align-items:center; gap:11px;}
+  .brand img{width:34px; height:34px; border-radius:9px;}
+  .brand .mark{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.28rem; letter-spacing:-0.01em;}
+  
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  
+  .lang-toggle{
+    display:inline-flex; align-items:center; background:var(--surface); border:1px solid var(--line);
+    border-radius:100px; padding:3px; gap:2px; font-size:0.78rem; font-weight:700;
+  }
+  .lang-btn{
+    padding:5px 12px; border-radius:100px; cursor:pointer; transition:all .18s ease; color:var(--text-soft); border:none; background:none;
+  }
+  .lang-btn.active{background:var(--green); color:#052312;}
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:10px 18px; border-radius:12px;
+    font-weight:700; font-size:0.88rem;
+    cursor:pointer; border:1px solid transparent; transition:transform .18s ease, background .18s ease, border-color .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-ghost{border-color:var(--line); color:var(--text);}
+  .btn-ghost:hover{border-color:var(--green); color:var(--green-bright);}
+
+  /* ---------- MAIN CONTENT ---------- */
+  main{flex:1; padding:50px 0 100px;}
+  
+  .sec-head{max-width:760px; margin-bottom:36px;}
+  .sec-eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--green-bright); font-weight:600; margin-bottom:14px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .sec-eyebrow::after{content:""; height:1px; width:40px; background:var(--line);}
+  .sec-head h1{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(2rem,3.8vw,2.8rem); letter-spacing:-0.015em; line-height:1.15;}
+  .sec-head p{margin-top:14px; color:var(--text-soft); font-size:1.02rem; line-height:1.65;}
+
+  /* Search & Filter Bar */
+  .controls-bar{display:flex; flex-direction:column; gap:16px; margin-bottom:32px;}
+  @media(min-width:768px){.controls-bar{flex-direction:row; justify-content:space-between; align-items:center;}}
+  
+  .search-box{
+    position:relative; flex:1; max-width:500px;
+  }
+  .search-box input{
+    width:100%; padding:14px 18px 14px 44px; border-radius:14px; background:var(--surface); border:1px solid var(--line);
+    color:var(--text); font-family:inherit; font-size:0.92rem; outline:none; transition:border-color .2s ease;
+  }
+  .search-box input:focus{border-color:var(--green-bright);}
+  .search-icon{position:absolute; left:16px; top:50%; transform:translateY(-50%); color:var(--text-dim); font-size:1rem;}
+
+  .cat-chips{display:flex; gap:8px; flex-wrap:wrap;}
+  .chip{
+    padding:8px 14px; border-radius:100px; background:var(--surface); border:1px solid var(--line);
+    color:var(--text-soft); font-size:0.8rem; font-weight:600; cursor:pointer; transition:all .18s ease;
+  }
+  .chip.active, .chip:hover{background:var(--green-tint); border-color:rgba(5,179,94,0.4); color:var(--green-bright);}
+
+  /* FAQ Accordion List */
+  .faq-container{display:flex; flex-direction:column; gap:14px; max-width:920px;}
+  .faq-item{
+    background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .faq-item:hover{border-color:rgba(5,179,94,0.4);}
+  .faq-item[open]{border-color:var(--green-bright); background:var(--surface-2);}
+  summary{
+    padding:20px 24px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.06rem;
+    cursor:pointer; display:flex; align-items:center; justify-content:space-between; list-style:none;
+    color:var(--text); gap:16px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+"; font-family:'IBM Plex Mono',monospace; font-size:1.3rem; color:var(--green-bright); flex-shrink:0;
+    transition:transform .2s ease;
+  }
+  .faq-item[open] summary::after{
+    content:"−"; transform:rotate(180deg);
+  }
+  .faq-body{
+    padding:0 24px 22px; font-size:0.93rem; color:var(--text-soft); line-height:1.7;
+    border-top:1px solid var(--line-soft); margin-top:6px; padding-top:16px; white-space:pre-line;
+  }
+  .faq-cat{
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--gold);
+    text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px; display:block;
+  }
+
+  .no-results{
+    text-align:center; padding:48px 20px; color:var(--text-dim); background:var(--surface);
+    border:1px dashed var(--line); border-radius:16px; font-size:0.95rem;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:46px 0 36px; border-top:1px solid var(--line-soft); background:var(--bg-2);}
+  .foot-bottom{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; font-size:0.78rem; color:var(--text-dim); font-family:'IBM Plex Mono',monospace;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Logo MyFinance">
+      <span class="mark">MyFinance</span>
+    </a>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('id')">🇮🇩 ID</button>
+        <button class="lang-btn" onclick="setLang('en')">🇺🇸 EN</button>
+      </div>
+      <a href="index.html" class="btn btn-ghost" id="backBtn">← Beranda</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow" id="eyebrowText">Pusat Bantuan & FAQ</div>
+      <h1 id="titleText">Pertanyaan Umum (FAQ)</h1>
+      <p id="descText">Seluruh 23 pertanyaan resmi dari aplikasi MyFinance seputar panduan Google Sheets, Keamanan, Fina AI, Lisensi PRO, dan Reimburse.</p>
+    </div>
+
+    <!-- Search and Category Filters -->
+    <div class="controls-bar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Cari pertanyaan atau kata kunci..." oninput="renderFaqs()">
+      </div>
+      <div class="cat-chips" id="catChips">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+
+    <!-- FAQ List -->
+    <div class="faq-container" id="faqContainer">
+      <!-- Rendered via JS -->
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <span id="copyText">© 2026 MyFinance. Semua hak dilindungi.</span>
+      <div>
+        <a href="privacy-policy.html" style="margin-right:16px;" id="privacyLink">Kebijakan Privasi</a>
+        <a href="index.html" id="homeLink">Kembali ke Beranda</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="lang.js"></script>
+<script>
+  let currentLang = getCurrentLanguage();
+  let activeCat = 'All';
+
+  const categories = [
+    { id: 'All', labelId: 'Semua (23)', labelEn: 'All (23)' },
+    { id: 'Google Sheets', labelId: 'Google Sheets', labelEn: 'Google Sheets' },
+    { id: 'Security', labelId: 'Keamanan & Data', labelEn: 'Security & Data' },
+    { id: 'Gemini AI', labelId: 'Gemini AI', labelEn: 'Gemini AI' },
+    { id: 'License & Ads', labelId: 'Lisensi & Iklan', labelEn: 'License & Ads' },
+    { id: 'Reimburse', labelId: 'Reimburse', labelEn: 'Reimbursement' }
+  ];
+
+  function setLang(lang) {
+    currentLang = lang;
+    setCurrentLanguage(lang);
+    updateLangButtons(lang);
+    updatePageText();
+    renderChips();
+    renderFaqs();
+  }
+
+  function updatePageText() {
+    if(currentLang === 'id') {
+      document.getElementById('pageTitle').innerText = 'Pusat Bantuan & FAQ — MyFinance';
+      document.getElementById('eyebrowText').innerText = 'Pusat Bantuan & FAQ';
+      document.getElementById('titleText').innerText = 'Pertanyaan Umum (FAQ)';
+      document.getElementById('descText').innerText = 'Seluruh 23 pertanyaan resmi dari aplikasi MyFinance seputar panduan Google Sheets, Keamanan, Fina AI, Lisensi PRO, dan Reimburse.';
+      document.getElementById('searchInput').placeholder = 'Cari pertanyaan atau kata kunci...';
+      document.getElementById('backBtn').innerText = '← Beranda';
+      document.getElementById('copyText').innerText = '© 2026 MyFinance. Semua hak dilindungi.';
+      document.getElementById('privacyLink').innerText = 'Kebijakan Privasi';
+      document.getElementById('homeLink').innerText = 'Kembali ke Beranda';
+    } else {
+      document.getElementById('pageTitle').innerText = 'Help Center & FAQ — MyFinance';
+      document.getElementById('eyebrowText').innerText = 'Help Center & FAQ';
+      document.getElementById('titleText').innerText = 'Frequently Asked Questions';
+      document.getElementById('descText').innerText = 'All 23 official questions from MyFinance app covering Google Sheets guide, Security, Fina AI, PRO License & Reimbursements.';
+      document.getElementById('searchInput').placeholder = 'Search question or topic...';
+      document.getElementById('backBtn').innerText = '← Home';
+      document.getElementById('copyText').innerText = '© 2026 MyFinance. All rights reserved.';
+      document.getElementById('privacyLink').innerText = 'Privacy Policy';
+      document.getElementById('homeLink').innerText = 'Back to Home';
+    }
+  }
+
+  function renderChips() {
+    const chipContainer = document.getElementById('catChips');
+    chipContainer.innerHTML = categories.map(cat => {
+      const label = currentLang === 'id' ? cat.labelId : cat.labelEn;
+      const isActive = activeCat === cat.id ? 'active' : '';
+      return `<button class="chip ${isActive}" onclick="filterCat('${cat.id}')">${label}</button>`;
+    }).join('');
+  }
+
+  function filterCat(catId) {
+    activeCat = catId;
+    renderChips();
+    renderFaqs();
+  }
+
+  function renderFaqs() {
+    const container = document.getElementById('faqContainer');
+    const query = document.getElementById('searchInput').value.toLowerCase().trim();
+
+    const filtered = AppTranslations.faqs.filter(item => {
+      const q = currentLang === 'id' ? item.qId : item.qEn;
+      const a = currentLang === 'id' ? item.aId : item.aEn;
+      const matchesSearch = !query || q.toLowerCase().includes(query) || a.toLowerCase().includes(query);
+      const matchesCat = activeCat === 'All' || item.cat === activeCat;
+      return matchesSearch && matchesCat;
+    });
+
+    if(filtered.length === 0) {
+      container.innerHTML = `
+        <div class="no-results">
+          ${currentLang === 'id' ? 'Tidak ada pertanyaan yang cocok dengan kata kunci Anda.' : 'No questions matching your search keywords.'}
+        </div>`;
+      return;
+    }
+
+    container.innerHTML = filtered.map((item, idx) => {
+      const q = currentLang === 'id' ? item.qId : item.qEn;
+      const a = currentLang === 'id' ? item.aId : item.aEn;
+      const openAttr = idx === 0 ? 'open' : '';
+      return `
+        <details class="faq-item" ${openAttr}>
+          <summary>
+            <div>
+              <span class="faq-cat">${item.cat}</span>
+              ${q}
+            </div>
+          </summary>
+          <div class="faq-body">${a}</div>
+        </details>`;
+    }).join('');
+  }
+
+  setLang(currentLang);
+</script>
+
+</body>
+</html>
