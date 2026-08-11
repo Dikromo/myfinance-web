@@ -798,16 +798,39 @@
         transition-duration: 0.01ms !important;
       }
     }
-  
-    .lang-toggle{
-      display:inline-flex; align-items:center; background:var(--surface); border:1px solid var(--line);
-      border-radius:100px; padding:3px; gap:2px; font-size:0.78rem; font-weight:700; margin-right:8px;
-      flex-shrink:0; white-space:nowrap;
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      padding: 3px;
+      gap: 2px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-right: 8px;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
-    .lang-btn{
-      padding:4px 10px; border-radius:100px; cursor:pointer; transition:all .18s ease; color:var(--text-soft); border:none; background:none; white-space:nowrap; font-size:0.78rem; line-height:1.2;
+
+    .lang-btn {
+      padding: 4px 10px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all .18s ease;
+      color: var(--text-soft);
+      border: none;
+      background: none;
+      white-space: nowrap;
+      font-size: 0.78rem;
+      line-height: 1.2;
     }
-    .lang-btn.active{background:var(--green); color:#052312;}
+
+    .lang-btn.active {
+      background: var(--green);
+      color: #052312;
+    }
 
     .mobile-toggle {
       display: flex;
@@ -854,7 +877,7 @@
       flex-direction: column;
       gap: 12px;
       z-index: 100;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
       animation: fadeInDown 0.2s ease-out;
     }
 
@@ -882,35 +905,49 @@
     }
 
     @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (max-width: 600px) {
       .wrap {
         padding: 0 16px;
       }
+
       section {
         padding: 48px 0;
       }
+
       nav.wrap {
         height: 64px;
         padding: 0 12px;
       }
+
       .brand {
         gap: 6px;
       }
+
       .brand img {
         width: 28px;
         height: 28px;
       }
+
       .brand .mark {
         font-size: 1.05rem;
       }
+
       .lang-toggle {
         margin-right: 2px;
         padding: 2px;
       }
+
       .lang-btn {
         padding: 3px 7px;
         font-size: 0.72rem;
@@ -921,10 +958,12 @@
       .hero {
         padding: 36px 0 32px;
       }
+
       .hero-grid {
         text-align: center;
         gap: 28px;
       }
+
       .eyebrow {
         display: inline-flex;
         flex-wrap: wrap;
@@ -933,6 +972,7 @@
         max-width: 100%;
         margin-bottom: 16px;
       }
+
       h1.hero-title {
         max-width: none;
         font-size: clamp(1.8rem, 6.8vw, 2.6rem);
@@ -940,15 +980,18 @@
         margin-right: auto;
         line-height: 1.15;
       }
+
       .hero-sub {
         max-width: none;
         margin-left: auto;
         margin-right: auto;
         font-size: 0.95rem;
       }
+
       .hero-ctas {
         justify-content: center;
       }
+
       .hero-note {
         display: block;
         text-align: center;
@@ -962,6 +1005,7 @@
         flex-direction: column;
         width: 100%;
       }
+
       .hero-ctas .btn {
         width: 100%;
         justify-content: center;
@@ -972,6 +1016,7 @@
       .feat-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .steps {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -984,6 +1029,7 @@
         margin: 0 12px;
         border-radius: 20px;
       }
+
       .cta-final h2 {
         max-width: 100%;
       }
@@ -994,12 +1040,14 @@
         flex-direction: column;
         gap: 28px;
       }
+
       .foot-cols {
         gap: 24px 20px;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
         width: 100%;
       }
+
       .foot-bottom {
         flex-direction: column;
         align-items: center;
@@ -1032,7 +1080,8 @@
         </div>
         <a href="#unduh" class="btn btn-primary nav-cta" id="ctaNavBtn">Unduh Gratis</a>
         <button class="mobile-toggle" id="mobileToggleBtn" aria-label="Menu Navigasi" onclick="toggleMobileMenu()">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -1232,24 +1281,35 @@
         <h2>Pertanyaan Umum (FAQ)</h2>
         <p>Jawaban cepat untuk pertanyaan yang paling sering ditanyakan seputar aplikasi MyFinance.</p>
       </div>
-      
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:22px; margin-bottom:36px;">
+
+      <div
+        style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:22px; margin-bottom:36px;">
         <div style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:26px;">
-          <h4 style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:600; margin-bottom:10px; color:var(--green-bright);">🔒 Di mana data saya disimpan?</h4>
-          <p style="color:var(--text-soft); font-size:0.92rem; line-height:1.6;">100% tersimpan secara lokal di ponsel Anda (SQLite) dan opsional di Google Sheets pribadi Anda. Tanpa server pihak ketiga.</p>
+          <h4
+            style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:600; margin-bottom:10px; color:var(--green-bright);">
+            🔒 Di mana data saya disimpan?</h4>
+          <p style="color:var(--text-soft); font-size:0.92rem; line-height:1.6;">100% tersimpan secara lokal di ponsel
+            Anda (SQLite) dan opsional di Google Sheets pribadi Anda. Tanpa server pihak ketiga.</p>
         </div>
         <div style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:26px;">
-          <h4 style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:600; margin-bottom:10px; color:var(--green-bright);">👥 Bisakah sinkron 2 HP dengan Pasangan?</h4>
-          <p style="color:var(--text-soft); font-size:0.92rem; line-height:1.6;">Bisa! Cukup hubungkan 1 URL Google Sheet yang sama di 2 HP untuk pencatatan keuangan bersama secara real-time.</p>
+          <h4
+            style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:600; margin-bottom:10px; color:var(--green-bright);">
+            👥 Bisakah sinkron 2 HP dengan Pasangan?</h4>
+          <p style="color:var(--text-soft); font-size:0.92rem; line-height:1.6;">Bisa! Cukup hubungkan 1 URL Google
+            Sheet yang sama di 2 HP untuk pencatatan keuangan bersama secara real-time.</p>
         </div>
         <div style="background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:26px;">
-          <h4 style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:600; margin-bottom:10px; color:var(--green-bright);">👑 Apakah ada versi Bebas Iklan (Ad-Free)?</h4>
-          <p style="color:var(--text-soft); font-size:0.92rem; line-height:1.6;">Ada. Mengaktifkan Lisensi PRO memberikan pengalaman aplikasi 100% Bebas Iklan tanpa gangguan.</p>
+          <h4
+            style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:600; margin-bottom:10px; color:var(--green-bright);">
+            👑 Apakah ada versi Bebas Iklan (Ad-Free)?</h4>
+          <p style="color:var(--text-soft); font-size:0.92rem; line-height:1.6;">Ada. Mengaktifkan Lisensi PRO
+            memberikan pengalaman aplikasi 100% Bebas Iklan tanpa gangguan.</p>
         </div>
       </div>
 
       <div style="text-align:center;">
-        <a href="faq.html" class="btn btn-ghost" style="padding:14px 28px; font-size:0.95rem;">Lihat Pertanyaan Selengkapnya ➔</a>
+        <a href="faq.html" class="btn btn-ghost" style="padding:14px 28px; font-size:0.95rem;">Lihat Pertanyaan
+          Selengkapnya ➔</a>
       </div>
     </div>
   </section>
@@ -1258,7 +1318,8 @@
     <div class="cta-final">
       <h2>Mulai catat hari ini, ngerti keuanganmu besok.</h2>
       <p>Gratis diunduh, langsung bisa dipakai offline. Aktifkan Fina AI dan sinkron kapan pun kamu siap.</p>
-      <a href="#" class="btn btn-primary">▷ Unduh di Google Play</a>
+      <a href="https://play.google.com/store/apps/details?id=com.myfinance.myfinance" class="btn btn-primary">▷ Unduh di
+        Google Play</a>
       <div class="store-note">Tersedia untuk Android · Gratis · Data tetap di tanganmu</div>
     </div>
   </section>
@@ -1304,15 +1365,15 @@
 
     function toggleMobileMenu() {
       const menu = document.getElementById('mobileMenu');
-      if(menu) menu.classList.toggle('active');
+      if (menu) menu.classList.toggle('active');
     }
 
     function closeMobileMenu() {
       const menu = document.getElementById('mobileMenu');
-      if(menu) menu.classList.remove('active');
+      if (menu) menu.classList.remove('active');
     }
 
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
       const menu = document.getElementById('mobileMenu');
       const btn = document.getElementById('mobileToggleBtn');
       if (menu && menu.classList.contains('active')) {
@@ -1332,7 +1393,7 @@
     function applyTranslations() {
       const dict = AppTranslations.landing[currentLang];
       const navLinks = document.querySelectorAll('.nav-links a');
-      if(navLinks.length >= 5) {
+      if (navLinks.length >= 5) {
         navLinks[0].innerText = dict.navFitur;
         navLinks[1].innerText = dict.navCollab;
         navLinks[2].innerText = dict.navHow;
@@ -1340,7 +1401,7 @@
         navLinks[4].innerText = dict.navPrivacy;
       }
       const mobLinks = document.querySelectorAll('.mobile-menu a:not(#mobileCtaBtn)');
-      if(mobLinks.length >= 5) {
+      if (mobLinks.length >= 5) {
         mobLinks[0].innerText = dict.navFitur;
         mobLinks[1].innerText = dict.navCollab;
         mobLinks[2].innerText = dict.navHow;
@@ -1348,34 +1409,34 @@
         mobLinks[4].innerText = dict.navPrivacy;
       }
       const ctaBtn = document.getElementById('ctaNavBtn');
-      if(ctaBtn) ctaBtn.innerText = dict.navCta;
+      if (ctaBtn) ctaBtn.innerText = dict.navCta;
       const mobCtaBtn = document.getElementById('mobileCtaBtn');
-      if(mobCtaBtn) mobCtaBtn.innerText = dict.navCta;
+      if (mobCtaBtn) mobCtaBtn.innerText = dict.navCta;
 
       const heroEb = document.querySelector('.hero .eyebrow');
-      if(heroEb) heroEb.innerText = dict.heroEyebrow;
+      if (heroEb) heroEb.innerText = dict.heroEyebrow;
       const heroT = document.querySelector('.hero-title');
-      if(heroT) heroT.innerHTML = dict.heroTitle;
+      if (heroT) heroT.innerHTML = dict.heroTitle;
       const heroS = document.querySelector('.hero-sub');
-      if(heroS) heroS.innerText = dict.heroSub;
+      if (heroS) heroS.innerText = dict.heroSub;
 
       const heroCtas = document.querySelectorAll('.hero-ctas a');
-      if(heroCtas.length >= 2) {
+      if (heroCtas.length >= 2) {
         heroCtas[0].innerText = dict.heroCtaPlay;
         heroCtas[1].innerText = dict.heroCtaFeat;
       }
       const heroNote = document.querySelector('.hero-note');
-      if(heroNote) heroNote.innerHTML = dict.heroNote;
+      if (heroNote) heroNote.innerHTML = dict.heroNote;
 
       // Hero float cards
       const f1 = document.querySelector('.float-card.f1');
-      if(f1) f1.innerHTML = '<span class="dot-live"></span> ' + dict.floatCard1;
+      if (f1) f1.innerHTML = '<span class="dot-live"></span> ' + dict.floatCard1;
       const f2 = document.querySelector('.float-card.f2');
-      if(f2) f2.innerText = dict.floatCard2;
+      if (f2) f2.innerText = dict.floatCard2;
 
       // Stats
       const stats = document.querySelectorAll('.stat');
-      if(stats.length >= 4) {
+      if (stats.length >= 4) {
         stats[0].querySelector('.num').innerText = dict.stat1Num;
         stats[0].querySelector('.lbl').innerText = dict.stat1Lbl;
         stats[1].querySelector('.num').innerText = dict.stat2Num;
@@ -1388,14 +1449,14 @@
 
       // Feature Section
       const featSec = document.getElementById('fitur');
-      if(featSec) {
+      if (featSec) {
         featSec.querySelector('.sec-eyebrow').innerText = dict.featEyebrow;
         featSec.querySelector('h2').innerText = dict.featTitle;
         const featP = featSec.querySelector('.sec-head p');
-        if(featP) featP.innerText = dict.featSub;
+        if (featP) featP.innerText = dict.featSub;
 
         const cards = featSec.querySelectorAll('.feat-card');
-        if(cards.length >= 3) {
+        if (cards.length >= 3) {
           cards[0].querySelector('h3').innerText = dict.feat1Title;
           cards[0].querySelector('p').innerText = dict.feat1Desc;
           cards[1].querySelector('h3').innerText = dict.feat2Title;
@@ -1407,12 +1468,12 @@
 
       // Collab Section
       const collabSec = document.getElementById('kolaborasi');
-      if(collabSec) {
+      if (collabSec) {
         collabSec.querySelector('.sec-eyebrow').innerText = dict.collabEyebrow;
         collabSec.querySelector('h2').innerText = dict.collabTitle;
         collabSec.querySelector('p').innerText = dict.collabSub;
         const chips = collabSec.querySelectorAll('.mini-chip');
-        if(chips.length >= 3) {
+        if (chips.length >= 3) {
           chips[0].innerText = dict.collabChip1;
           chips[1].innerText = dict.collabChip2;
           chips[2].innerText = dict.collabChip3;
@@ -1421,11 +1482,11 @@
 
       // How Section
       const howSec = document.getElementById('cara-kerja');
-      if(howSec) {
+      if (howSec) {
         howSec.querySelector('.sec-eyebrow').innerText = dict.howEyebrow;
         howSec.querySelector('h2').innerText = dict.howTitle;
         const steps = howSec.querySelectorAll('.step');
-        if(steps.length >= 3) {
+        if (steps.length >= 3) {
           steps[0].querySelector('h4').innerText = dict.how1Title;
           steps[0].querySelector('p').innerText = dict.how1Desc;
           steps[1].querySelector('h4').innerText = dict.how2Title;
@@ -1437,12 +1498,12 @@
 
       // FAQ Preview Section
       const faqSec = document.getElementById('faq-preview');
-      if(faqSec) {
+      if (faqSec) {
         faqSec.querySelector('.sec-eyebrow').innerText = dict.faqEyebrow;
         faqSec.querySelector('h2').innerText = dict.faqTitle;
         faqSec.querySelector('p').innerText = dict.faqSub;
         const faqBoxes = faqSec.querySelectorAll('div[style*="background:var(--surface)"]');
-        if(faqBoxes.length >= 3) {
+        if (faqBoxes.length >= 3) {
           faqBoxes[0].querySelector('h4').innerText = dict.faqQ1;
           faqBoxes[0].querySelector('p').innerText = dict.faqA1;
           faqBoxes[1].querySelector('h4').innerText = dict.faqQ2;
@@ -1451,12 +1512,12 @@
           faqBoxes[2].querySelector('p').innerText = dict.faqA3;
         }
         const faqLinkBtn = faqSec.querySelector('a.btn-ghost');
-        if(faqLinkBtn) faqLinkBtn.innerText = dict.faqBtnAll;
+        if (faqLinkBtn) faqLinkBtn.innerText = dict.faqBtnAll;
       }
 
       // CTA Final
       const ctaSec = document.querySelector('.cta-final');
-      if(ctaSec) {
+      if (ctaSec) {
         ctaSec.querySelector('h2').innerText = dict.ctaTitle;
         ctaSec.querySelector('p').innerText = dict.ctaSub;
         ctaSec.querySelector('.btn-primary').innerText = dict.ctaBtn;
@@ -1465,10 +1526,10 @@
 
       // Footer
       const footCols = document.querySelectorAll('.foot-col');
-      if(footCols.length >= 3) {
+      if (footCols.length >= 3) {
         footCols[0].querySelector('h5').innerText = dict.footProd;
         const col1Links = footCols[0].querySelectorAll('a');
-        if(col1Links.length >= 3) {
+        if (col1Links.length >= 3) {
           col1Links[0].innerText = dict.footLinkFitur;
           col1Links[1].innerText = dict.footLinkCollab;
           col1Links[2].innerText = dict.footLinkUnduh;
@@ -1476,21 +1537,21 @@
 
         footCols[1].querySelector('h5').innerText = dict.footComp;
         const col2Links = footCols[1].querySelectorAll('a');
-        if(col2Links.length >= 2) {
+        if (col2Links.length >= 2) {
           col2Links[0].innerText = dict.footLinkTentang;
           col2Links[1].innerText = dict.footLinkKontak;
         }
 
         footCols[2].querySelector('h5').innerText = dict.footLegal;
         const col3Links = footCols[2].querySelectorAll('a');
-        if(col3Links.length >= 3) {
+        if (col3Links.length >= 3) {
           col3Links[0].innerText = dict.footLinkFaq;
           col3Links[1].innerText = dict.footLinkPrivacy;
           col3Links[2].innerText = dict.footLinkTerms;
         }
       }
       const footBotSpans = document.querySelectorAll('.foot-bottom span');
-      if(footBotSpans.length >= 2) {
+      if (footBotSpans.length >= 2) {
         footBotSpans[0].innerText = dict.footCopy;
         footBotSpans[1].innerText = dict.footSub;
       }
