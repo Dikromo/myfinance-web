@@ -685,6 +685,8 @@
       inset: 0;
       background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1.4px, transparent 1.7px);
       background-size: 22px 22px;
+      pointer-events: none;
+      z-index: 0;
     }
 
     .cta-final h2 {
@@ -694,6 +696,7 @@
       max-width: 16ch;
       margin: 0 auto 16px;
       position: relative;
+      z-index: 1;
       color: #fff;
     }
 
@@ -702,12 +705,15 @@
       max-width: 44ch;
       margin: 0 auto 30px;
       position: relative;
+      z-index: 1;
     }
 
     .cta-final .btn-primary {
       background: #fff;
       color: #05341e;
       box-shadow: none;
+      position: relative;
+      z-index: 2;
     }
 
     .cta-final .btn-primary:hover {
@@ -1109,7 +1115,7 @@
           keuanganmu langsung ke Fina AI, dan lihat analisis visual dari data kamu sendiri — bahkan bisa disinkron
           bareng pasangan atau rekan kerja.</p>
         <div class="hero-ctas">
-          <a href="#unduh" class="btn btn-primary">▷ Unduh di Google Play</a>
+          <a href="https://play.google.com/store/apps/details?id=com.myfinance.myfinance" target="_blank" rel="noopener noreferrer" class="btn btn-primary">▷ Unduh di Google Play</a>
           <a href="#fitur" class="btn btn-ghost">Lihat Fitur</a>
         </div>
         <div class="hero-note">Bisa dipakai <b>100% offline</b> · Sinkron opsional lewat Google Sheets milikmu sendiri
