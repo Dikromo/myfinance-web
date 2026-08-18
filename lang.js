@@ -352,7 +352,7 @@ var AppTranslations = {
       eyebrow: 'Transparansi & Keamanan Data',
       title: 'Kebijakan Privasi',
       desc: 'Privasi & keamanan data keuanganmu adalah prioritas utama kami. Baca komitmen penuh MyFinance dalam menjaga data kamu 100% aman dan berada di bawah kendalimu sendiri.',
-      badge: 'Terakhir Diperbarui: 5 Agustus 2026',
+      badge: 'Terakhir Diperbarui: 18 Agustus 2026',
       subFoot: 'Ditenagai Gemini AI · Dibuat untuk yang mau lebih ngerti duitnya sendiri.',
       cards: [
         {
@@ -392,6 +392,22 @@ var AppTranslations = {
         },
         {
           num: '05',
+          title: 'Isolasi Multi-Buku & Ekosistem Keuangan',
+          items: [
+            '<b>Isolasi Multi-Buku:</b> Setiap buku pencatatan (Multi-Ledger) yang Anda buat tersimpan secara terpisah dan terisolasi di database lokal. Anda dapat menghubungkan tiap buku ke Google Sheet yang berbeda tanpa risiko kebocoran data antar-buku.',
+            '<b>Rekam Ekosistem:</b> Tagihan Rutin, Target Impian, dan Hutang/Piutang tersimpan sesuai buku aktifnya dan disinkronkan secara privat ke tab khusus di Google Sheet Anda (RecurringBills, SavingsGoals, Debts).'
+          ]
+        },
+        {
+          num: '06',
+          title: 'Kunci Cadangan Pribadi & Kepatuhan Ketentuan Google',
+          items: [
+            '<b>Kunci Cadangan Pribadi Konfigurasi Pengguna:</b> Seluruh API Key cadangan yang ditambahkan pada Gemini Key Manager adalah kunci pribadi milik pengguna sendiri yang dikonfigurasi untuk keandalan koneksi, failover, dan pemisahan proyek. Kunci tersimpan 100% terenkripsi di penyimpanan aman lokal bawaan perangkat (Encrypted Device Vault).',
+            '<b>Kepatuhan & Transmisi Langsung:</b> Kunci API cadangan ditransmisikan secara langsung ke server resmi Google Gemini API tanpa campur tangan pihak ketiga. Pengguna bertanggung jawab penuh atas kepatuhan terhadap Ketentuan Layanan resmi Google AI Studio untuk setiap kunci API pribadi yang dikonfigurasi.'
+          ]
+        },
+        {
+          num: '07',
           title: 'Hak Pengguna & Penghapusan Data',
           items: [
             '<b>Kontrol Data:</b> Anda memiliki hak penuh untuk memeriksa, mengedit, atau menghapus transaksi apapun secara lokal di HP maupun di Google Sheets Anda.',
@@ -399,14 +415,14 @@ var AppTranslations = {
           ]
         },
         {
-          num: '06',
+          num: '08',
           title: 'Kontak Pengembang & Dukungan',
           items: [
-            'Jika Anda memiliki pertanyaan atau kendala seputar Kebijakan Privasi ini, silakan hubungi tim dukungan kami melalui WhatsApp di menu Lisensi Premium.'
+            'Jika Anda memiliki pertanyaan, saran, atau kendala seputar Kebijakan Privasi aplikasi MyFinance, silakan hubungi tim dukungan kami melalui WhatsApp di menu Lisensi Premium atau melalui email resmi pengembang.'
           ]
         },
         {
-          num: '07',
+          num: '09',
           fullWidth: true,
           title: 'Pernyataan Hak Cipta & Disclaimer (Penafian)',
           items: [
@@ -420,7 +436,7 @@ var AppTranslations = {
       eyebrow: 'Data Security & Transparency',
       title: 'Privacy Policy',
       desc: 'Your financial data privacy and security are our top priorities. Read MyFinance\'s full commitment to keeping your data 100% safe and under your control.',
-      badge: 'Last Updated: August 5, 2026',
+      badge: 'Last Updated: August 18, 2026',
       subFoot: 'Powered by Gemini AI · Built for those who want to master their finances.',
       cards: [
         {
@@ -460,6 +476,22 @@ var AppTranslations = {
         },
         {
           num: '05',
+          title: 'Multi-Ledger Isolation & Financial Ecosystem',
+          items: [
+            '<b>Multi-Ledger Isolation:</b> Each financial ledger (Multi-Ledger) you create is stored separately and isolated in the local database. You can connect each ledger to a different Google Sheet without risk of cross-ledger data leaks.',
+            '<b>Ecosystem Records:</b> Recurring Bills, Savings Goals, and Debts/Loans are stored according to their active ledger and synced privately to dedicated tabs in your Google Sheet (RecurringBills, SavingsGoals, Debts).'
+          ]
+        },
+        {
+          num: '06',
+          title: 'Personal Backup Keys & Google Terms Compliance',
+          items: [
+            '<b>User-Configured Personal Backup Keys:</b> All backup API Keys added to Gemini Key Manager are the user\'s own personal keys configured for connection reliability, failover, and project isolation. Keys are stored 100% encrypted in the device\'s built-in secure storage (Encrypted Device Vault).',
+            '<b>Compliance & Direct Transmission:</b> Backup API Keys are transmitted directly to official Google Gemini API servers without third-party involvement. Users are fully responsible for compliance with official Google AI Studio Terms of Service for each configured personal API key.'
+          ]
+        },
+        {
+          num: '07',
           title: 'User Rights & Data Deletion',
           items: [
             '<b>Data Control:</b> You have complete control to inspect, edit, or delete any transaction locally on your device or in your Google Sheets.',
@@ -467,14 +499,14 @@ var AppTranslations = {
           ]
         },
         {
-          num: '06',
+          num: '08',
           title: 'Developer Contact & Support',
           items: [
-            'If you have questions or concerns regarding this Privacy Policy, please contact our support team via WhatsApp in the Premium License menu.'
+            'If you have any questions, suggestions, or issues regarding the MyFinance Privacy Policy, please contact our support team via WhatsApp in the Premium License menu or via our official developer email.'
           ]
         },
         {
-          num: '07',
+          num: '09',
           fullWidth: true,
           title: 'Copyright & Disclaimer Statement',
           items: [
